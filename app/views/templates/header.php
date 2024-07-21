@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($data['movie']['Title']); ?></title>
+    <title>Movie Database</title>
      <link rel="stylesheet" href="css/style.css">
 </head>
     

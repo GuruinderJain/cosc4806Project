@@ -47,5 +47,14 @@
             <button type="submit">Submit Review</button>
         </form>
     </section>
+
+    <section class="ai-review-form">
+        <h2>AI Review</h2>
+        <form action="index.php?controller=AIReviewController&action=generate" method="post">
+            <input type="hidden" name="movieTitle" value="<?php echo htmlspecialchars($data['movie']['Title']); ?>">
+             <input type="hidden" name="movieId" value="<?php echo htmlspecialchars($data['movie']['imdbID']); ?>">
+            <button type="submit">Get AI Review</button>
+        </form>
+    </section>
 </div>
 <?php include 'app/views/templates/footer.php'; ?>
