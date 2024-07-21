@@ -1,35 +1,87 @@
-.card {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1, .footer p {
+    margin: 0;
+}
+
+.card, .review-section, .review-form {
     max-width: 600px;
+    width: 90%;
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 10px;
     background-color: #fff;
 }
-.card img {
+
+.card img, .review img {
     max-width: 100%;
     border-radius: 10px;
 }
-.card h1 {
+
+.card h1, .review-form h2, .review-section h2 {
     font-size: 24px;
     margin: 0 0 10px;
 }
-.card p {
+
+.card p, .review p, .review-form p {
     margin: 10px 0;
+    color: #555;
 }
-.card a {
+
+.card a, .review a, .review-form a {
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
 }
-.card a:hover {
+
+.card a:hover, .review a:hover, .review-form a:hover {
     text-decoration: underline;
 }
-.card-footer {
-    text-align: center;
-    margin-top: 20px;
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review-stars {
+    color: #FFD700; /* Gold color for stars */
+}
+
+.review-form textarea, .review-form select, .review-form button, .search-form input[type="text"], .search-form button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f4f4;
 }
 
 footer {
@@ -37,7 +89,6 @@ footer {
     padding: 20px;
     background-color: #007BFF;
     color: white;
-    position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -45,4 +96,49 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+.search-form {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.search-form h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.search-form ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search-form ul li {
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.search-form ul li a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.search-form ul li a:hover {
+    text-decoration: underline;
+}
+
+.search-form button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
 }

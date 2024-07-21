@@ -15,16 +15,18 @@
         <?php endif; ?></p>
         <a href="index.php">Back to Search</a>
     </section>
-    <section class="card">
+
+    <section class="review-section">
         <h2>Reviews</h2>
         <?php foreach ($data['reviews'] as $review): ?>
             <div class="review">
                 <p><?php echo htmlspecialchars($review['review']); ?></p>
-                <p>Stars: <?php echo htmlspecialchars($review['stars']); ?></p>
+                <p class="review-stars">Stars: <?php echo str_repeat('★', htmlspecialchars($review['stars'])); ?></p>
             </div>
         <?php endforeach; ?>
     </section>
-    <section class="card">
+
+    <section class="review-form">
         <h2>Add a Review</h2>
         <form action="index.php?controller=ReviewController&action=addReview" method="post">
             <input type="hidden" name="movieId" value="<?php echo htmlspecialchars($data['movie']['imdbID']); ?>">

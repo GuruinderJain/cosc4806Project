@@ -7,3 +7,6 @@
 </head>
     
 <body>
+<header class="header">
+    <h1>Movie Database</h1>
+</header>
