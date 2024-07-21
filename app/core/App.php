@@ -6,26 +6,31 @@ class App {
 
     public function __construct() {
         $url = $this->parseUrl();
-        if (file_exists('app/controllers/' . $url[0] . '.php')) {
-            $this->controller = $url[0];
-            unset($url[0]);
+
+        // Check for controller parameter in query string
+        if (isset($url['controller']) && file_exists('app/controllers/' . $url['controller'] . '.php')) {
+            $this->controller = $url['controller'];
         }
         require_once 'app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
-        if (isset($url[1])) {
-            if (method_exists($this->controller, $url[1])) {
-                $this->method = $url[1];
-                unset($url[1]);
-            }
+        // Check for action parameter in query string
+        if (isset($url['action']) && method_exists($this->controller, $url['action'])) {
+            $this->method = $url['action'];
         }
+
+        // Extract remaining parameters
+        unset($url['controller']);
+        unset($url['action']);
         $this->params = $url ? array_values($url) : [];
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
     public function parseUrl() {
-        if (isset($_GET['url'])) {
-            return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+        // Parse query string into an array
+        if (isset($_SERVER['QUERY_STRING'])) {
+            parse_str($_SERVER['QUERY_STRING'], $query);
+            return $query;
         }
     }
 }
