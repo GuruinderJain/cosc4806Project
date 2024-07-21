@@ -19,12 +19,10 @@ class OMDBController extends Controller {
     public function details($id) {
         // Load the OMDB model
         $omdbModel = $this->model('OMDB');
-
-        // Fetch the movie details using the model
+        $reviewModel = $this->model('Review');
         $movieDetails = $omdbModel->fetchMovieDetails($id);
-
-        // Pass the details to the view
-        $this->view('omdb/details', ['movie' => $movieDetails]);
+        $reviews = $reviewModel->getReviewsByMovieId($id);
+        $this->view('omdb/details', ['movie' => $movieDetails, 'reviews' => $reviews]);
     }
 }
 ?>

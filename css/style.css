@@ -1,0 +1,48 @@
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #fff;
+}
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.card h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+.card p {
+    margin: 10px 0;
+}
+.card a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+.card a:hover {
+    text-decoration: underline;
+}
+.card-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+}
